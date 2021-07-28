@@ -193,7 +193,7 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
       "authors": [
         {
           "author": "Francesco Sacco",
-          "authorURL": "github.com/Francesco215",
+          "authorURL": "https://github.com/Francesco215",
           "affiliation": "University of Pisa",
           "affiliationURL": "https://www.unipi.it"
         }
@@ -235,6 +235,7 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
           <li><a href="#maronn">Why it expands</a></li>
           <li><a href="#remarks">Some remarks</a></li>
         </ul>
+        <div><a href="#hyperbolic">What happens in hyperbolic space</a></div>
       </nav>
     </d-contents>
 
@@ -267,6 +268,10 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
             This could explain why our universe in expanding, and why the expantion of the universe
             isn’t constant throught the age of the universe.
         </p>
+        <p>
+          However this would mean that the universe has some kind of edge. This seems off, but we can start from this
+          to make a better theory for universes that are not flat.
+        </p>
         <h3 id="remarks">Some remarks</h3>
         <p>
             If the universe can be described by a single wavefunction $|\textrm{Universe}\rangle$,
@@ -279,12 +284,42 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
             </d-footnote>
             , than the entropy can be considered non zero and the paradox reappears for a large enough volume 
         </p>
+        <h2 id="hyperbolic">What happens in hyperbolic space</h2>
         <p>
-          Another way this paradox can be averted is by having a space that is hyperbolic,
-          for a large radius the surface of a sphere and the area are the same, so this problem
-          can be averted, but not always
-
-          SCRIVI SPIEGAZIONE
+          <!--
+            Another way this paradox can be averted is by having a space that is hyperbolic,
+            for a large radius the surface of a sphere and the area are the same, so this problem
+            can be averted, but not always.
+          -->
+          Let's consider a simple hyperbolic space in two dimentions, the circumference $C$ and the area $A$ are
+          <d-footnote>Inserisci citazione fatta bene https://www.maa.org/press/periodicals/loci/joma/hyperbolic-geometry-circles</d-footnote>
+          <d-math block>
+            C(r,\tau)=\frac{2\pi}{\tau} \sinh (r\tau) \quad \quad A(r,\tau)=\frac{4\pi}{\tau^2} \sinh^2 ( r\tau/2)
+          </d-math>
+          Where $\tau$ represents how much the space is hyperbolic, for $\tau=0$ the space is flat.
+        </p>
+        <p>
+          We can imagine that is this 2D universe the maximum amount of entropy is proportional to the circumference
+          $S_{max}(r,\tau)=s_b C(r,\tau)$.          
+        </p>
+        <p>
+          Now we can imagine that our 2D universe has a constant entropy density per unit area $S_u(r,\tau)=s_uA(r,\tau)$.
+          Just like before we must impose that
+          <d-math block>S_u(r,\tau)\le S_{max}(r,\tau)</d-math>
+          Now some quick calculations...
+          <d-math block>s_u\frac{4\pi}{\tau^2}\sinh^2(r\tau/2)\le s_b \frac{2\pi}{\tau} \sinh(r\tau)</d-math>
+          <d-math block>\frac 2\tau \frac{\sinh^2(r\tau/2)}{\sinh (r\tau)}\le \frac{s_b}{s_u}</d-math>
+          And we have that
+          <d-math block>\frac 1\tau\tanh(r\tau/2)\le \frac{s_b}{s_u}</d-math>
+          This must be true for all $r$, since $\max\big[\tanh(r)\big]=\tanh(\infty)=1$ we have that for hyperbolic space
+          <d-math block>s_u\le s_b\tau</d-math>
+          So that we have a more generalize upper limit to the density of entropy per unit volume of the universe.
+          Notice how for $\tau=0$ we get the result that the universe must have $s_u=0$,
+          which is the result we obtained previously.
+        </p>
+        <p>
+          If we have that $s_u=s_b\tau$ we get that in order for the universe to not collapse it has to increase
+          the curvature or the volume <d-footnote>Non è che per caso le due cose sono equivalenti?</d-footnote>
         </p>
     </div>
     
