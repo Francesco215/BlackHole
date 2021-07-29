@@ -3,185 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=1200">
   <script src="https://distill.pub/template.v2.js"></script>
-
-<style>
-    .subgrid {
-  grid-column: screen; 
-  display: grid; 
-  grid-template-columns: inherit;
-  grid-template-rows: inherit;
-  grid-column-gap: inherit;
-  grid-row-gap: inherit;
-}
-
-d-figure.base-grid {
-  grid-column: screen;
-  background: hsl(0, 0%, 97%);
-  padding: 20px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-d-figure {
-  margin-bottom: 1em;
-  position: relative;
-}
-
-d-figure > figure {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.shaded-figure {
-  background-color: hsl(0, 0%, 97%);
-  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
-  padding: 30px 0;
-}
-
-.pointer {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  top: 26px;
-  left: -48px;
-}
-
-.grayscale-light {
-  filter: gray;
-  -webkit-filter: grayscale(1) contrast(0.2) brightness(1.6);
-  filter: grayscale(1) contrast(0.2) brightness(1.6);
-}
-
-.grayscale-dark {
-  filter: gray;
-  -webkit-filter: grayscale(1) brightness(0.75);
-  filter: grayscale(1) brightness(0.75);
-}
-
-.striped {
-  background: repeating-linear-gradient(135deg, lightgray 0px, whitesmoke 10px, lightgray 20px);
-}
-
-body d-title {
-  overflow-x: auto;
-}
-
-body d-article {
-  overflow: visible;
-}
-
-d-title h1, d-title p, d-title figure {
-  grid-column: page;
-}
-
-b {
-  font-weight: bold;
-}
-
-label, button {
-  cursor: pointer;
-}
-
-button {
-  border-radius: 0.25em;
-}
-
-/* table of contents */
-
-@media (max-width: 1000px) {
-  d-contents {
-    justify-self: start;
-    align-self: start;
-    grid-column-start: 2;
-    grid-column-end: 6;
-    padding-bottom: 0.5em;
-    margin-bottom: 1em;
-    padding-left: 0.25em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-@media (min-width: 1000px) {
-  d-contents {
-    align-self: start;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    justify-self: end;
-    padding-right: 3em;
-    padding-left: 2em;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-@media (min-width: 1180px) {
-  d-contents {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    justify-self: end;
-    padding-right: 3em;
-    padding-left: 2em;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-d-contents nav h3 {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-
-d-contents nav a {
-  color: rgba(0, 0, 0, 0.8);
-  border-bottom: none;
-  text-decoration: none;
-}
-
-d-contents li {
-  list-style-type: none;
-}
-
-d-contents ul {
-  padding-left: 1em;
-}
-
-d-contents nav ul li {
-  margin-bottom: 0.25em;
-}
-
-d-contents nav a:hover {
-  text-decoration: underline solid rgba(0, 0, 0, 0.6);
-}
-
-d-contents nav ul {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
-d-contents nav > div {
-  display: block;
-  outline: none;
-  margin-bottom: 0.5em;
-}
-
-d-contents nav > div > a {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
-  text-decoration: none;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -292,12 +114,12 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
             can be averted, but not always.
           -->
           Let's consider a simple hyperbolic space in two dimentions, the circumference $C$ and the area $A$ are
-          <d-footnote>Inserisci citazione fatta bene https://www.maa.org/press/periodicals/loci/joma/hyperbolic-geometry-circles</d-footnote>
+          <d-cite key="hyperbolic_circle"></d-cite>
           <d-math block>
             C(r,\tau)=\frac{2\pi}{\tau} \sinh (r\tau) \quad \quad A(r,\tau)=\frac{4\pi}{\tau^2} \sinh^2 ( r\tau/2)
           </d-math>
           Where $\tau$ represents how much the space is hyperbolic, for $\tau=0$ the space is flat.
-          <d-footnote>Controllare che le formule siano corrette, il modo in cui le ho ricavate io è cambiano unità di misura</d-footnote>
+          <d-footnote>Controllare che le formule siano corrette, il modo in cui le ho ricavate io è cambiando unità di misura</d-footnote>
         </p>
         <p>
           We can imagine that is this 2D universe the maximum amount of entropy is proportional to the circumference
@@ -314,7 +136,7 @@ d-contents nav > div > a:hover, d-contents nav > ul > li > a:hover {
           <d-math block>\frac 1\tau\tanh(r\tau/2)\le \frac{s_b}{s_u}</d-math>
           This must be true for all $r$, since $\max\big[\tanh(r)\big]=\tanh(\infty)=1$ we have that for hyperbolic space
           <d-math block>s_u\le s_b\tau</d-math>
-          So that we have a more generalize upper limit to the density of entropy per unit volume of the universe.
+          So that we have a more generalized upper limit to the density of entropy per unit volume of the universe.
           Notice how for $\tau=0$ we get the result that the universe must have $s_u=0$,
           which is the result we obtained previously.
         </p>
